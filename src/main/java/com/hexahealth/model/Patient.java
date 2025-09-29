@@ -1,6 +1,7 @@
 package com.hexahealth.model;
 
 import jakarta.persistence.*;
+import com.hexahealth.model.User;
 
 @Entity
 @Table(name = "patients")
@@ -13,6 +14,9 @@ public class Patient {
     private String name;
 
     private String city;
+
+    @OneToOne
+    private User user;
 
     public int getPid() {
         return pid;
@@ -36,5 +40,13 @@ public class Patient {
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

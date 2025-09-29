@@ -19,6 +19,11 @@ public class TestReportController {
 
     @PostMapping("/add/{aid}")
     public ResponseEntity<?> addTestReport(@PathVariable int aid, @RequestBody TestReport testReport){
+                /*
+                    {
+                        "description" : ""
+                    }
+                 */
         try{
             Appointment appointment = appointmentService.findById(aid);
             testReport.setAppointment(appointment);

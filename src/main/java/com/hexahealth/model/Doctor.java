@@ -12,6 +12,9 @@ public class Doctor {
     private String name;
     private String specialisation;
 
+    @OneToOne
+    private User user;
+
     public int getDid() {
         return did;
     }
@@ -34,5 +37,13 @@ public class Doctor {
 
     public void setSpecialisation(String specialisation) {
         this.specialisation = specialisation;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

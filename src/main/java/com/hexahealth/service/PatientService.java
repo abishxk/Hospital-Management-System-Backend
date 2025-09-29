@@ -1,8 +1,11 @@
 package com.hexahealth.service;
 
+import com.hexahealth.model.AppointmentType;
 import com.hexahealth.model.Patient;
 import com.hexahealth.repository.PatientRepository;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class PatientService {
@@ -19,4 +22,9 @@ public class PatientService {
     public Patient findById(int pid) {
         return patientRepo.findById(pid).orElseThrow(()->new RuntimeException("patient not found"));
     }
+
+    public List<Patient> getAll() {
+        return patientRepo.findAll();
+    }
+
 }
